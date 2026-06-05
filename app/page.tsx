@@ -14,12 +14,12 @@ export default function HomePage() {
         <div className="container relative z-10 flex min-h-screen items-center pt-24">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
             <div>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur"><Sparkles size={16}/> Premium Travel Experiences</p>
+              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-luxury-ocean/35 bg-luxury-ocean/15 px-4 py-2 text-sm font-semibold text-white backdrop-blur"><Sparkles size={16}/> Premium Travel Experiences</p>
               <h1 className="font-display text-5xl font-bold leading-tight text-balance md:text-7xl">Explore Beyond Borders with Ferone Tours & Travels</h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">Tailor-made safaris, beach escapes, visa support, flights, hotels, transfers and international travel planning for families, couples, groups and corporate travelers.</p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="/tours-safaris" className="rounded-full bg-luxury-gold px-7 py-4 font-bold text-luxury-navy shadow-luxury transition hover:scale-[1.02]">View Tour Packages</a>
-                <a href="/contact" className="rounded-full border border-white/25 px-7 py-4 font-bold text-white transition hover:bg-white hover:text-luxury-navy">Plan My Trip</a>
+                <a href="/tours-safaris" className="rounded-full bg-luxury-ocean px-7 py-4 font-bold text-luxury-navy shadow-brand transition hover:scale-[1.02] hover:bg-white">View Tour Packages</a>
+                <a href="/contact" className="rounded-full border border-luxury-ocean/45 px-7 py-4 font-bold text-white transition hover:bg-luxury-ocean hover:text-luxury-navy">Plan My Trip</a>
               </div>
             </div>
             <div className="glass rounded-[2rem] p-5 shadow-glass">
@@ -51,14 +51,14 @@ export default function HomePage() {
       <section className="container py-24">
         <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div><p className="font-bold uppercase tracking-[.25em] text-luxury-ocean">Why choose Ferone</p><h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">Travel planning with airline-level precision and safari-level adventure.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Ferone brings consultation, documentation support, booking coordination and destination expertise together in one premium travel experience.</p></div>
-          <div className="grid gap-5 sm:grid-cols-2">{[{icon:ShieldCheck,title:'Trusted guidance'},{icon:Plane,title:'Flights & logistics'},{icon:Globe2,title:'International planning'},{icon:Users,title:'Groups & corporate'}].map((item)=>{const Icon=item.icon;return <div key={item.title} className="rounded-[1.5rem] border bg-white p-6 shadow-sm"><Icon className="mb-4 text-luxury-ocean"/><h3 className="text-xl font-bold">{item.title}</h3><p className="mt-2 text-slate-600">Professional support from inquiry to return.</p></div>})}</div>
+          <div className="grid gap-5 sm:grid-cols-2">{[{icon:ShieldCheck,title:'Trusted guidance'},{icon:Plane,title:'Flights & logistics'},{icon:Globe2,title:'International planning'},{icon:Users,title:'Groups & corporate'}].map((item)=>{const Icon=item.icon;return <div key={item.title} className="rounded-[1.5rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-brand"><Icon className="mb-4 text-luxury-ocean"/><h3 className="text-xl font-bold">{item.title}</h3><p className="mt-2 text-slate-600">Professional support from inquiry to return.</p></div>})}</div>
         </div>
       </section>
 
       <section className="premium-gradient py-24 text-white">
         <div className="container">
           <SectionHeading eyebrow="Services" title="Everything your journey needs" text="One travel partner for safaris, visas, flights, hotels, transfers, consultation, honeymoon and group travel." light />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{services.map((service)=><div key={service} className="rounded-[1.5rem] border border-white/15 bg-white/10 p-6 backdrop-blur"><Star className="mb-4 text-luxury-gold"/><h3 className="text-xl font-bold">{service}</h3></div>)}</div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{services.map((service)=><div key={service} className="rounded-[1.5rem] border border-luxury-ocean/30 bg-white/10 p-6 backdrop-blur transition hover:border-luxury-ocean hover:bg-luxury-ocean/15"><Star className="mb-4 text-luxury-ocean"/><h3 className="text-xl font-bold">{service}</h3></div>)}</div>
         </div>
       </section>
 
@@ -74,7 +74,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container py-24"><div className="rounded-[2rem] premium-gradient p-10 text-white md:p-16"><MapPin className="mb-5 text-luxury-gold"/><h2 className="font-display text-4xl font-bold md:text-5xl">Ready to plan a premium trip?</h2><p className="mt-4 max-w-2xl text-white/80">Send your destination, travel dates and number of travelers. Ferone will help shape the right package.</p><a href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-luxury-gold px-7 py-4 font-bold text-luxury-navy">Start Inquiry <ArrowRight size={18}/></a></div></section>
+      <section className="container py-24"><div className="rounded-[2rem] premium-gradient p-10 text-white md:p-16"><MapPin className="mb-5 text-luxury-ocean"/><h2 className="font-display text-4xl font-bold md:text-5xl">Ready to plan a premium trip?</h2><p className="mt-4 max-w-2xl text-white/80">Send your destination, travel dates and number of travelers. Ferone will help shape the right package.</p><a href="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-luxury-ocean px-7 py-4 font-bold text-luxury-navy shadow-brand transition hover:bg-white">Start Inquiry <ArrowRight size={18}/></a></div></section>
     </>
   );
 }
