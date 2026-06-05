@@ -1,42 +1,65 @@
-import { ArrowRight, Globe2, Plane, ShieldCheck, Sparkles, Star, Users, MapPin, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays, Globe2, MapPin, Plane, Search, ShieldCheck, Star, Users } from "lucide-react";
 import { tours, destinations, services, posts, testimonials } from "@/lib/data";
 import { TourCard } from "@/components/shared/tour-card";
 import { DestinationCard } from "@/components/shared/destination-card";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { InquiryForm } from "@/components/forms/inquiry-form";
+
+const stats = [
+  ["Happy Travelers", "4,800+"],
+  ["Countries Covered", "35+"],
+  ["Tours Completed", "1,200+"],
+  ["Customer Satisfaction", "98%"]
+];
 
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden premium-gradient text-white">
-        <div className="absolute inset-0 opacity-25 bg-[url('/images/hero/hero-safari.svg')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-b from-luxury-navy/20 via-luxury-navy/40 to-luxury-navy" />
-        <div className="container relative z-10 flex min-h-screen items-center pt-24">
-          <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-            <div>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-luxury-ocean/35 bg-luxury-ocean/15 px-4 py-2 text-sm font-semibold text-white backdrop-blur"><Sparkles size={16}/> Premium Travel Experiences</p>
-              <h1 className="font-display text-5xl font-bold leading-tight text-balance md:text-7xl">Explore Beyond Borders with Ferone Tours & Travels</h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82">Tailor-made safaris, beach escapes, visa support, flights, hotels, transfers and international travel planning for families, couples, groups and corporate travelers.</p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="/tours-safaris" className="rounded-full bg-luxury-ocean px-7 py-4 font-bold text-luxury-navy shadow-brand transition hover:scale-[1.02] hover:bg-white">View Tour Packages</a>
-                <a href="/contact" className="rounded-full border border-luxury-ocean/45 px-7 py-4 font-bold text-white transition hover:bg-luxury-ocean hover:text-luxury-navy">Plan My Trip</a>
-              </div>
-            </div>
-            <div className="glass rounded-[2rem] p-5 shadow-glass">
-              <h2 className="mb-4 text-2xl font-bold">Quick Travel Inquiry</h2>
-              <InquiryForm compact />
-            </div>
+      <section className="relative mt-[107px] min-h-[730px] overflow-hidden bg-luxury-navy text-white">
+        <div className="absolute inset-0 bg-[url('/images/hero/hero-safari.svg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="container relative z-10 flex min-h-[730px] items-center justify-center pb-28 pt-16 text-center">
+          <div className="mx-auto max-w-5xl">
+            <h1 className="text-balance text-5xl font-black leading-tight tracking-tight md:text-7xl lg:text-[78px]">
+              Discover Africa Like Never Before!
+            </h1>
+            <p className="mx-auto mt-8 max-w-5xl text-lg font-semibold leading-8 text-white md:text-xl">
+              Book unforgettable safaris, tailor-made holidays, and premium travel experiences with Ferone Tours and Travels.
+            </p>
+            <a href="/tours-safaris" className="mt-12 inline-flex items-center gap-3 rounded-md bg-luxury-ocean px-8 py-4 text-2xl font-black tracking-[.08em] text-luxury-navy shadow-brand transition hover:-translate-y-1 hover:bg-white md:text-3xl">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-luxury-ocean">➜</span>
+              Explore Safari Packages and Book Today
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="-mt-14 relative z-20 container">
-        <div className="grid gap-4 rounded-[2rem] bg-white p-6 shadow-luxury md:grid-cols-4">
-          {[['Happy Travelers','4,800+'],['Countries Covered','35+'],['Tours Completed','1,200+'],['Customer Satisfaction','98%']].map(([label,value])=><div key={label} className="rounded-3xl bg-luxury-sand p-6 text-center"><p className="text-3xl font-black text-luxury-ocean">{value}</p><p className="mt-1 text-sm font-semibold text-slate-600">{label}</p></div>)}
+      <section className="relative -mt-16 z-20 bg-luxury-ocean pb-16 pt-0">
+        <div className="container">
+          <form action="/api/inquiry" method="post" className="mx-auto max-w-5xl rounded border-4 border-luxury-navy/45 bg-white p-4 shadow-2xl md:p-5">
+            <h2 className="mb-5 text-2xl font-black text-luxury-ink">Find Your Package</h2>
+            <div className="grid gap-4 md:grid-cols-[1fr_1fr_1fr_auto]">
+              <input name="destination" required placeholder="Destination" className="h-14 rounded border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean" />
+              <input name="travelDate" type="date" className="h-14 rounded border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean" />
+              <select name="travelers" className="h-14 rounded border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean">
+                <option>Travelers</option>
+                <option>1 Traveler</option>
+                <option>2 Travelers</option>
+                <option>Family or Group</option>
+                <option>Corporate Team</option>
+              </select>
+              <button className="inline-flex h-14 items-center justify-center gap-2 rounded bg-luxury-navy px-7 font-black text-white transition hover:bg-luxury-ocean hover:text-luxury-navy"><Search size={18}/> Search</button>
+            </div>
+          </form>
         </div>
       </section>
 
-      <section className="container py-24">
+      <section className="container py-20">
+        <div className="grid gap-4 rounded-[1.25rem] bg-white p-6 shadow-luxury md:grid-cols-4">
+          {stats.map(([label,value])=><div key={label} className="rounded-2xl bg-luxury-sand p-6 text-center"><p className="text-3xl font-black text-luxury-ocean">{value}</p><p className="mt-1 text-sm font-semibold text-slate-600">{label}</p></div>)}
+        </div>
+      </section>
+
+      <section className="container pb-24">
         <SectionHeading eyebrow="Featured tours" title="Handpicked journeys for unforgettable memories" text="Safari, beach, city and international packages built around comfort, trust and expert travel planning." />
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">{tours.slice(0,6).map((tour)=><TourCard key={tour.title} tour={tour}/>)}</div>
       </section>
@@ -51,7 +74,7 @@ export default function HomePage() {
       <section className="container py-24">
         <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div><p className="font-bold uppercase tracking-[.25em] text-luxury-ocean">Why choose Ferone</p><h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">Travel planning with airline-level precision and safari-level adventure.</h2><p className="mt-5 text-lg leading-8 text-slate-600">Ferone brings consultation, documentation support, booking coordination and destination expertise together in one premium travel experience.</p></div>
-          <div className="grid gap-5 sm:grid-cols-2">{[{icon:ShieldCheck,title:'Trusted guidance'},{icon:Plane,title:'Flights & logistics'},{icon:Globe2,title:'International planning'},{icon:Users,title:'Groups & corporate'}].map((item)=>{const Icon=item.icon;return <div key={item.title} className="rounded-[1.5rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-brand"><Icon className="mb-4 text-luxury-ocean"/><h3 className="text-xl font-bold">{item.title}</h3><p className="mt-2 text-slate-600">Professional support from inquiry to return.</p></div>})}</div>
+          <div className="grid gap-5 sm:grid-cols-2">{[{icon:ShieldCheck,title:'Trusted guidance'},{icon:Plane,title:'Flights and logistics'},{icon:Globe2,title:'International planning'},{icon:Users,title:'Groups and corporate'}].map((item)=>{const Icon=item.icon;return <div key={item.title} className="rounded-[1.5rem] border bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-brand"><Icon className="mb-4 text-luxury-ocean"/><h3 className="text-xl font-bold">{item.title}</h3><p className="mt-2 text-slate-600">Professional support from inquiry to return.</p></div>})}</div>
         </div>
       </section>
 
