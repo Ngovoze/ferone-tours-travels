@@ -8,10 +8,10 @@ const config: Config = {
       colors: {
         luxury: {
           navy: "#06182f",
-          ocean: "#006cae",
-          sky: "#38bdf8",
+          ocean: "#0CAFEC",
+          sky: "#67D8F8",
           gold: "#f3b33d",
-          sand: "#f8efe1",
+          sand: "#f4fbff",
           ink: "#07111f"
         }
       },
@@ -20,11 +20,12 @@ const config: Config = {
         display: ["var(--font-playfair)", "Georgia", "serif"]
       },
       boxShadow: {
-        luxury: "0 28px 90px rgba(6, 24, 47, 0.22)",
-        glass: "0 20px 70px rgba(2, 8, 23, 0.20)"
+        luxury: "0 28px 90px rgba(12, 175, 236, 0.24)",
+        glass: "0 20px 70px rgba(2, 8, 23, 0.20)",
+        brand: "0 22px 60px rgba(12, 175, 236, 0.34)"
       },
       backgroundImage: {
-        "hero-glow": "radial-gradient(circle at 20% 20%, rgba(56,189,248,.28), transparent 35%), radial-gradient(circle at 80% 0%, rgba(243,179,61,.22), transparent 35%), linear-gradient(135deg,#06182f 0%,#08284b 45%,#08345f 100%)"
+        "hero-glow": "radial-gradient(circle at 20% 20%, rgba(12,175,236,.34), transparent 35%), radial-gradient(circle at 80% 0%, rgba(243,179,61,.18), transparent 35%), linear-gradient(135deg,#06182f 0%,#075079 45%,#0CAFEC 100%)"
       }
     }
   },
