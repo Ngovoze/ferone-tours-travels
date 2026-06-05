@@ -10,3 +10,11 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
 .glass { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(18px); }
 .premium-gradient { background: radial-gradient(circle at 16% 10%, rgba(12,175,236,.35), transparent 28%), linear-gradient(135deg, #06182f 0%, #075079 52%, #0CAFEC 100%); }
 .text-balance { text-wrap: balance; }
+.hero-slide { opacity: 0; transform: scale(1.04); animation: heroFade 24s infinite ease-in-out; }
+@keyframes heroFade {
+  0% { opacity: 0; transform: scale(1.04); }
+  6% { opacity: 1; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1.02); }
+  31% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 0; transform: scale(1.04); }
+}
