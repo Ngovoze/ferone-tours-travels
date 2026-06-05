@@ -1,0 +1,5 @@
+import { PageHero } from "@/components/page-hero";
+import { InquiryForm } from "@/components/forms/inquiry-form";
+import { Mail, MapPin, Phone } from "lucide-react";
+
+export default function ContactPage(){return <><PageHero title="Contact Ferone" text="Tell us where you want to go. We will help you plan the right travel experience."/><section className="container grid gap-10 py-20 lg:grid-cols-2"><div className="rounded-[2rem] bg-luxury-sand p-8"><h2 className="font-display text-4xl font-bold">Start your inquiry</h2><div className="mt-6 grid gap-4 text-slate-700"><p className="flex gap-3"><Phone/> +254 712 345 678</p><p className="flex gap-3"><Mail/> info@feronetours.com</p><p className="flex gap-3"><MapPin/> Nairobi, Kenya</p></div></div><div className="rounded-[2rem] bg-luxury-navy p-6 text-white"><InquiryForm /></div></section><section className="container pb-20"><iframe title="Ferone Tours map" src="https://www.google.com/maps?q=Nairobi%2C%20Kenya&output=embed" className="h-96 w-full rounded-[2rem] border-0" loading="lazy"/></section></>}
