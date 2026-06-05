@@ -3,6 +3,7 @@ import { tours, destinations, services, posts, testimonials } from "@/lib/data";
 import { TourCard } from "@/components/shared/tour-card";
 import { DestinationCard } from "@/components/shared/destination-card";
 import { SectionHeading } from "@/components/shared/section-heading";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 
 const stats = [
   ["Happy Travelers", "4,800+"],
@@ -15,8 +16,9 @@ export default function HomePage() {
   return (
     <>
       <section className="relative mt-[107px] min-h-[730px] overflow-hidden bg-luxury-navy text-white">
-        <div className="absolute inset-0 bg-[url('/images/hero/hero-safari.svg')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black/20" />
+        <HeroSlideshow />
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/45" />
         <div className="container relative z-10 flex min-h-[730px] items-center justify-center pb-28 pt-16 text-center">
           <div className="mx-auto max-w-5xl">
             <h1 className="text-balance text-5xl font-black leading-tight tracking-tight md:text-7xl lg:text-[78px]">
