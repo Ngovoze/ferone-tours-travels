@@ -12,6 +12,28 @@ const stats = [
   ["Customer Satisfaction", "98%"]
 ];
 
+const travelStyles = [
+  ["Family Holidays", "Safe, comfortable trips for parents, children and family groups."],
+  ["Honeymoon Packages", "Romantic beach, safari and luxury resort experiences."],
+  ["Wildlife Safaris", "Game drives, conservancies and unforgettable Big Five moments."],
+  ["Beach Holidays", "Diani, Zanzibar and coastal escapes with smooth planning."],
+  ["Corporate Travel", "Flights, hotels, transfers and group logistics for teams."],
+  ["Group Travel", "Church groups, friends, schools, chama trips and organizations."],
+  ["Cultural Tours", "Local experiences, heritage visits and community-focused travel."],
+  ["International Holidays", "Dubai, Europe, USA, South Africa and global travel planning."]
+];
+
+const experiences = [
+  ["Game Drives", "Guided wildlife viewing in Kenya and East Africa’s top parks."],
+  ["Beach Escapes", "Relaxed coastal stays for couples, families and groups."],
+  ["City Tours", "Dubai, Nairobi, Cape Town and international city experiences."],
+  ["Honeymoon Setups", "Special romantic arrangements and premium accommodation."],
+  ["Visa Assistance", "Document guidance and travel-readiness consultation."],
+  ["Airport Transfers", "Reliable pickup and drop-off coordination."],
+  ["Hotel Bookings", "Accommodation support based on budget and comfort level."],
+  ["Family Vacations", "Easy-to-manage itineraries built for all ages."]
+];
+
 export default function HomePage() {
   return (
     <>
@@ -66,6 +88,26 @@ export default function HomePage() {
         <div className="mt-8 grid gap-5 md:mt-10 md:grid-cols-2 lg:grid-cols-3">{tours.slice(0,6).map((tour)=><TourCard key={tour.title} tour={tour}/>)}</div>
       </section>
 
+      <section className="container pb-16 md:pb-24">
+        <div className="rounded-3xl bg-luxury-navy p-6 text-white shadow-luxury md:rounded-[2rem] md:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-black uppercase tracking-[.22em] text-luxury-ocean">Custom trip planning</p>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-5xl">Didn&apos;t find the perfect package?</h2>
+            <p className="mt-4 text-sm leading-7 text-white/78 md:text-base md:leading-8">No worries. Ferone Tours & Travels can design a custom trip based on your budget, dates, number of travelers and preferred destination.</p>
+          </div>
+          <a href="/contact" className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-luxury-ocean px-6 py-3 font-black text-luxury-navy transition hover:bg-white lg:mt-0">Request a Custom Package <ArrowRight size={18}/></a>
+        </div>
+      </section>
+
+      <section className="bg-white pb-16 md:pb-24">
+        <div className="container">
+          <SectionHeading eyebrow="Travel styles" title="Explore trips by travel style" text="Choose the kind of trip you want, then Ferone will help you shape the right route, hotel, transport and budget." />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-10">
+            {travelStyles.map(([title,text])=><article key={title} className="rounded-3xl border bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-brand"><div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-luxury-sand text-luxury-ocean"><Star size={20}/></div><h3 className="text-lg font-black text-luxury-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-luxury-sand py-16 md:py-24">
         <div className="container">
           <SectionHeading eyebrow="Destinations" title="Popular destinations Ferone can plan for you" text="From Kenya and Tanzania safaris to Zanzibar beaches, Dubai escapes, Europe, USA and beyond." />
@@ -74,9 +116,31 @@ export default function HomePage() {
       </section>
 
       <section className="container py-16 md:py-24">
+        <SectionHeading eyebrow="Experiences" title="Popular travel experiences" text="Not every traveler searches by destination. Some know the experience they want first, and Ferone helps build the package around it." />
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-10">
+          {experiences.map(([title,text])=><article key={title} className="rounded-3xl bg-luxury-sand p-5"><div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-luxury-ocean shadow-sm"><MapPin size={18}/></div><h3 className="text-lg font-black text-luxury-ink">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}
+        </div>
+      </section>
+
+      <section className="container py-16 md:py-24">
         <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center md:gap-10">
           <div><p className="font-bold uppercase tracking-[.18em] text-luxury-ocean md:tracking-[.25em]">Why choose Ferone</p><h2 className="mt-3 font-display text-3xl font-bold md:text-5xl">Travel planning with airline-level precision and safari-level adventure.</h2><p className="mt-4 text-base leading-7 text-slate-600 md:mt-5 md:text-lg md:leading-8">Ferone brings consultation, documentation support, booking coordination and destination expertise together in one premium travel experience.</p></div>
           <div className="grid gap-4 sm:grid-cols-2 md:gap-5">{[{icon:ShieldCheck,title:'Trusted guidance'},{icon:Plane,title:'Flights and logistics'},{icon:Globe2,title:'International planning'},{icon:Users,title:'Groups and corporate'}].map((item)=>{const Icon=item.icon;return <div key={item.title} className="rounded-3xl border bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-brand md:rounded-[1.5rem] md:p-6"><Icon className="mb-4 text-luxury-ocean"/><h3 className="text-lg font-bold md:text-xl">{item.title}</h3><p className="mt-2 text-sm text-slate-600 md:text-base">Professional support from inquiry to return.</p></div>})}</div>
+        </div>
+      </section>
+
+      <section className="bg-luxury-navy py-16 text-white md:py-24">
+        <div className="container grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-center">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[.22em] text-luxury-ocean">Travel expert support</p>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-5xl">Speak directly with a Ferone travel expert</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-white/75 md:text-base md:leading-8">Not sure where to go? Tell us your budget, travel dates and destination ideas. We will help you compare options and design the right package before you commit.</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+            <a href="https://wa.me/254710557164" className="rounded-full bg-[#25D366] px-5 py-3 text-center font-black text-white transition hover:scale-[1.02]">Chat on WhatsApp</a>
+            <a href="tel:+254710557164" className="rounded-full bg-white px-5 py-3 text-center font-black text-luxury-navy transition hover:scale-[1.02]">Call +254 710 557164</a>
+            <a href="mailto:info@feronetours.com" className="rounded-full border border-white/30 px-5 py-3 text-center font-black text-white transition hover:bg-white hover:text-luxury-navy">Email Us</a>
+          </div>
         </div>
       </section>
 
