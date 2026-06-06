@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Mail, Menu, MessageCircle, Phone, Search } from "lucide-react";
+import { ChevronDown, Mail, Menu, MessageCircle, Phone, Search, X } from "lucide-react";
 
 const nav = [
   ["Home", "/"],
@@ -17,7 +17,7 @@ const phoneLink = "+254710557164";
 
 export function Header(){
   return <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm">
-    <div className="hidden bg-luxury-navy text-white sm:block">
+    <div className="hidden bg-luxury-navy text-white md:block">
       <div className="container flex h-7 items-center justify-between text-xs font-semibold">
         <div className="flex items-center gap-5">
           <a href="https://wa.me/254710557164" className="flex items-center gap-1.5 transition hover:text-luxury-ocean"><MessageCircle size={13}/> {phoneDisplay}</a>
@@ -32,9 +32,9 @@ export function Header(){
       </div>
     </div>
     <div className="bg-white text-luxury-ink">
-      <div className="container flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center" aria-label="Ferone Tours & Travels home">
-          <Image src="/logo-ferone.png" alt="Ferone Tours & Travels" width={190} height={55} className="h-auto w-44" priority />
+      <div className="container flex h-16 items-center justify-between md:h-20">
+        <Link href="/" className="flex min-w-0 items-center" aria-label="Ferone Tours & Travels home">
+          <Image src="/logo-ferone.png" alt="Ferone Tours & Travels" width={190} height={55} className="h-auto w-32 sm:w-40 md:w-44" priority />
         </Link>
         <nav className="hidden items-center gap-7 text-[15px] font-semibold lg:flex">
           {nav.map(([label,href])=><Link key={href} href={href} className="transition hover:text-luxury-ocean">{label}</Link>)}
@@ -44,7 +44,21 @@ export function Header(){
           <button aria-label="Search tours" className="flex h-12 w-12 items-center justify-center rounded-full bg-luxury-sand text-luxury-navy transition hover:bg-luxury-ocean"><Search size={21}/></button>
           <button className="flex items-center gap-2 rounded-sm bg-white px-4 py-3 font-bold shadow-lg"><span>EN</span> <ChevronDown size={16}/></button>
         </div>
-        <button className="lg:hidden" aria-label="Open menu"><Menu /></button>
+        <details className="group lg:hidden">
+          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full bg-luxury-sand text-luxury-navy [&::-webkit-details-marker]:hidden" aria-label="Open menu">
+            <Menu className="group-open:hidden" size={22}/>
+            <X className="hidden group-open:block" size={22}/>
+          </summary>
+          <div className="absolute left-4 right-4 top-[4.7rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl md:top-[6.7rem]">
+            <nav className="grid divide-y divide-slate-100 text-base font-bold">
+              {nav.map(([label,href])=><Link key={href} href={href} className="px-5 py-4 transition hover:bg-luxury-sand hover:text-luxury-ocean">{label}</Link>)}
+            </nav>
+            <div className="grid gap-3 bg-luxury-sand p-4 sm:grid-cols-2">
+              <a href="https://wa.me/254710557164" className="rounded-full bg-[#25D366] px-4 py-3 text-center text-sm font-black text-white">WhatsApp Us</a>
+              <a href={`tel:${phoneLink}`} className="rounded-full bg-luxury-navy px-4 py-3 text-center text-sm font-black text-white">Call {phoneDisplay}</a>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </header>
