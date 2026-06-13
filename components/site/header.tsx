@@ -9,7 +9,8 @@ const nav = [
   ["About", "/about"],
   ["Gallery", "/gallery"],
   ["Blog", "/blog"],
-  ["Contact Us", "/contact"]
+  ["FAQ", "/faq"],
+  ["Contact", "/contact"]
 ];
 
 const phoneDisplay = "+254 710 557164";
@@ -31,17 +32,10 @@ export function Header(){
       <div className="bg-white text-luxury-ink">
         <div className="container flex h-16 items-center justify-between md:h-[84px]">
           <Link href="/" className="flex shrink-0 items-center" aria-label="Ferone Tours & Travels home">
-            <Image
-              src="/logo-ferone.png"
-              alt="Ferone Tours & Travels"
-              width={144}
-              height={105}
-              className="h-14 w-auto object-contain md:h-[72px]"
-              priority
-            />
+            <Image src="/logo-ferone.png" alt="Ferone Tours & Travels" width={144} height={105} className="h-14 w-auto object-contain md:h-[72px]" priority />
           </Link>
 
-          <nav className="hidden items-center gap-5 text-sm font-bold xl:flex 2xl:gap-7 2xl:text-[15px]">
+          <nav className="hidden items-center gap-4 text-[13px] font-bold xl:flex 2xl:gap-6 2xl:text-sm">
             {nav.map(([label,href])=><Link key={href} href={href} className="whitespace-nowrap transition hover:text-luxury-ocean">{label}</Link>)}
           </nav>
 
@@ -54,7 +48,7 @@ export function Header(){
               <Menu className="group-open:hidden" size={22}/>
               <X className="hidden group-open:block" size={22}/>
             </summary>
-            <div className="absolute left-4 right-4 top-[4.5rem] overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl md:top-[7.75rem]">
+            <div className="absolute left-4 right-4 top-[4.5rem] overflow-y-auto rounded-3xl border border-slate-200 bg-white shadow-2xl md:top-[7.75rem]">
               <nav className="grid divide-y divide-slate-100 text-base font-bold">
                 {nav.map(([label,href])=><Link key={href} href={href} className="px-5 py-4 transition hover:bg-luxury-sand hover:text-luxury-ocean">{label}</Link>)}
               </nav>
