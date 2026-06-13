@@ -37,41 +37,48 @@ const experiences = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative mt-16 min-h-[590px] overflow-hidden bg-luxury-navy text-white md:mt-[107px] md:min-h-[730px]">
+      <section className="relative mt-16 min-h-[560px] overflow-hidden bg-luxury-navy text-white md:mt-[116px] md:min-h-[650px]">
         <HeroSlideshow />
-        <div className="absolute inset-0 bg-black/40 md:bg-black/35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/60" />
-        <div className="container relative z-10 flex min-h-[590px] items-center justify-center px-5 pb-24 pt-10 text-center md:min-h-[730px] md:pb-28 md:pt-16">
-          <div className="mx-auto max-w-5xl">
-            <h1 className="text-balance text-[2.55rem] font-black leading-[1.05] tracking-tight sm:text-5xl md:text-7xl lg:text-[78px]">
-              Discover Africa Like Never Before!
+        <div className="absolute inset-0 bg-gradient-to-r from-luxury-navy/90 via-luxury-navy/58 to-luxury-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/75 via-transparent to-luxury-navy/10" />
+        <div className="container relative z-10 flex min-h-[560px] items-center px-5 pb-20 pt-12 text-center md:min-h-[650px] md:pb-24 md:pt-16 lg:text-left">
+          <div className="mx-auto max-w-3xl lg:mx-0">
+            <div className="mx-auto inline-flex items-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-white backdrop-blur lg:mx-0">
+              Tailor-made safaris & holidays
+            </div>
+            <h1 className="mt-5 text-balance text-[2.7rem] font-black leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-[68px]">
+              Discover Africa Like Never Before
             </h1>
-            <p className="mx-auto mt-5 max-w-3xl text-base font-medium leading-7 text-white/90 sm:text-lg md:mt-8 md:text-xl md:font-semibold md:leading-8">
-              Book unforgettable safaris, tailor-made holidays, and premium travel experiences with Ferone Tours and Travels.
+            <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-white/88 sm:text-lg md:text-xl md:leading-8 lg:mx-0">
+              Unforgettable safaris, beach escapes and international holidays planned with care by Ferone Tours & Travels.
             </p>
-            <a href="/tours-safaris" className="mt-7 inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-full bg-luxury-ocean px-5 py-4 text-base font-black text-luxury-navy shadow-brand transition hover:-translate-y-1 hover:bg-white sm:w-auto sm:max-w-none md:mt-12 md:rounded-md md:px-8 md:text-2xl lg:text-3xl">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/90 text-luxury-ocean md:h-8 md:w-8">➜</span>
-              <span>Explore Safari Packages</span>
-            </a>
+            <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+              <a href="/tours-safaris" className="inline-flex w-full max-w-sm items-center justify-center gap-2 rounded-full bg-luxury-ocean px-6 py-4 text-base font-black text-luxury-navy shadow-brand transition hover:-translate-y-1 hover:bg-white sm:w-auto md:text-lg">
+                Explore Safari Packages <ArrowRight size={19}/>
+              </a>
+              <a href="https://wa.me/254710557164" className="inline-flex w-full max-w-sm items-center justify-center rounded-full border border-white/35 bg-white/10 px-6 py-4 text-base font-black text-white backdrop-blur transition hover:bg-white hover:text-luxury-navy sm:w-auto md:text-lg">
+                Plan a Custom Trip
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-20 bg-luxury-ocean px-4 pb-10 pt-6 md:-mt-16 md:pb-16 md:pt-0">
+      <section className="relative z-20 bg-luxury-ocean px-4 pb-10 pt-6 md:-mt-12 md:pb-16 md:pt-0">
         <div className="container px-0 md:px-4">
-          <form action="/api/inquiry" method="post" className="mx-auto max-w-5xl rounded-3xl border border-white/30 bg-white p-5 shadow-2xl md:rounded md:border-4 md:border-luxury-navy/45">
+          <form action="/api/inquiry" method="post" className="mx-auto max-w-5xl rounded-3xl border border-white/30 bg-white p-5 shadow-2xl md:rounded-2xl md:p-6">
             <h2 className="mb-4 text-xl font-black text-luxury-ink md:text-2xl">Find Your Package</h2>
             <div className="grid gap-3 md:grid-cols-[1fr_1fr_1fr_auto] md:gap-4">
-              <input name="destination" required placeholder="Destination" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14 md:rounded" />
-              <input name="travelDate" type="date" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14 md:rounded" />
-              <select name="travelers" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14 md:rounded">
+              <input name="destination" required placeholder="Destination" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14" />
+              <input name="travelDate" type="date" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14" />
+              <select name="travelers" className="h-12 rounded-xl border border-slate-300 px-4 text-luxury-ink outline-none focus:border-luxury-ocean md:h-14">
                 <option>Travelers</option>
                 <option>1 Traveler</option>
                 <option>2 Travelers</option>
                 <option>Family or Group</option>
                 <option>Corporate Team</option>
               </select>
-              <button className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-luxury-navy px-7 font-black text-white transition hover:bg-luxury-ocean hover:text-luxury-navy md:h-14 md:rounded"><Search size={18}/> Search</button>
+              <button className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-luxury-navy px-7 font-black text-white transition hover:bg-luxury-ocean hover:text-luxury-navy md:h-14"><Search size={18}/> Search</button>
             </div>
           </form>
         </div>
@@ -110,8 +117,8 @@ export default function HomePage() {
 
       <section className="bg-luxury-sand py-16 md:py-24">
         <div className="container">
-          <SectionHeading eyebrow="Destinations" title="Popular destinations Ferone can plan for you" text="From Kenya and Tanzania safaris to Zanzibar beaches, Dubai escapes, Europe, USA and beyond." />
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:mt-10">{destinations.slice(0,9).map((destination)=><DestinationCard key={destination.name} destination={destination}/>)}</div>
+          <SectionHeading eyebrow="Destinations" title="Popular destinations Ferone can plan for you" text="From African safaris and Zanzibar beaches to Dubai, China, Europe, USA and beyond." />
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:mt-10">{destinations.map((destination)=><DestinationCard key={destination.name} destination={destination}/>)}</div>
         </div>
       </section>
 
