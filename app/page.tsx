@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { ArrowRight, CalendarDays, Globe2, MapPin, Plane, Search, ShieldCheck, Star, Users } from "lucide-react";
 import { tours, destinations, services, posts } from "@/lib/data";
+import { travelStyles } from "@/lib/travel-styles";
 import { TourCard } from "@/components/shared/tour-card";
 import { DestinationCard } from "@/components/shared/destination-card";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -10,17 +12,6 @@ const stats = [
   ["Countries Covered", "35+"],
   ["Tours Completed", "1,200+"],
   ["Customer Satisfaction", "98%"]
-];
-
-const travelStyles = [
-  ["Family Holidays", "Safe, comfortable trips for parents, children and family groups."],
-  ["Honeymoon Packages", "Romantic beach, safari and luxury resort experiences."],
-  ["Wildlife Safaris", "Game drives, conservancies and unforgettable Big Five moments."],
-  ["Beach Holidays", "Diani, Zanzibar and coastal escapes with smooth planning."],
-  ["Corporate Travel", "Flights, hotels, transfers and group logistics for teams."],
-  ["Group Travel", "Church groups, friends, schools, chama trips and organizations."],
-  ["Cultural Tours", "Local experiences, heritage visits and community-focused travel."],
-  ["International Holidays", "Dubai, Europe, USA, South Africa and global travel planning."]
 ];
 
 const experiences = [
@@ -106,11 +97,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white pb-10 md:pb-14">
+      <section id="travel-styles" className="bg-white pb-10 md:pb-14">
         <div className="container">
-          <SectionHeading eyebrow="Travel styles" title="Explore trips by travel style" text="Choose the kind of trip you want, then Ferone will help you shape the right route, hotel, transport and budget." />
+          <SectionHeading eyebrow="Travel styles" title="Explore trips by travel style" text="Choose the kind of trip you want, then open the card to see suitable destinations, experiences, planning tips and matching packages." />
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-7">
-            {travelStyles.map(([title,text])=><article key={title} className="rounded-3xl border bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-brand"><div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-luxury-sand text-luxury-ocean"><Star size={19}/></div><h3 className="text-lg font-black text-luxury-ink">{title}</h3><p className="mt-1.5 text-sm leading-6 text-slate-600">{text}</p></article>)}
+            {travelStyles.map((style)=><Link key={style.slug} href={`/travel-styles/${style.slug}`} className="group rounded-3xl border bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:border-luxury-ocean hover:shadow-brand focus:outline-none focus:ring-4 focus:ring-luxury-ocean/20">
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-luxury-sand text-luxury-ocean transition group-hover:bg-luxury-ocean group-hover:text-luxury-navy"><Star size={19}/></div>
+                <ArrowRight size={18} className="mt-2 text-slate-300 transition group-hover:translate-x-1 group-hover:text-luxury-ocean"/>
+              </div>
+              <h3 className="mt-4 text-lg font-black text-luxury-ink transition group-hover:text-luxury-ocean">{style.title}</h3>
+              <p className="mt-1.5 text-sm leading-6 text-slate-600">{style.shortDescription}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-black text-luxury-ocean">View more information <ArrowRight size={15}/></span>
+            </Link>)}
           </div>
         </div>
       </section>
