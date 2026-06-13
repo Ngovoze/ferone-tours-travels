@@ -2,6 +2,14 @@ export const services = [
   "Tours & Safaris","Holiday Packages","Visa Assistance","Flight Booking","Hotel Reservations","Airport Transfers","Corporate Travel","Travel Consultation","Group Travel","Honeymoon Packages","International Travel Planning"
 ];
 
+export type TourGalleryImage = {
+  src: string;
+  title: string;
+  alt: string;
+  source: string;
+  sourceUrl: string;
+};
+
 export type Tour = {
   slug: string;
   title: string;
@@ -9,7 +17,7 @@ export type Tour = {
   duration: string;
   price: string;
   image: string;
-  gallery: string[];
+  gallery: TourGalleryImage[];
   highlights: string[];
   summary: string;
   overview: string;
@@ -29,9 +37,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-maasai-mara.svg",
     gallery: [
-      "/images/tours/tour-maasai-mara.svg",
-      "/images/destinations/destination-kenya.svg",
-      "/images/tours/tour-serengeti.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Wbeest_Mara.jpg/1280px-Wbeest_Mara.jpg",
+        title: "Wildebeest Migration",
+        alt: "Aerial view of a large wildebeest herd in the Maasai Mara",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Wbeest_Mara.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/GnusAndZebrasInMaraMasai.jpg/1280px-GnusAndZebrasInMaraMasai.jpg",
+        title: "Zebras and Wildebeest on the Mara Plains",
+        alt: "Zebras and wildebeest grazing across the Maasai Mara grasslands",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:GnusAndZebrasInMaraMasai.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Masai_Mara_at_Sunset.jpg/1280px-Masai_Mara_at_Sunset.jpg",
+        title: "Sunset Over the Maasai Mara",
+        alt: "Golden sunset over the Maasai Mara savannah",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Masai_Mara_at_Sunset.jpg"
+      }
     ],
     highlights: ["Game drives","Luxury lodge","Big Five experience"],
     summary: "A compact luxury safari combining scenic savannah landscapes, professionally guided game drives and comfortable lodge accommodation in Kenya's best-known wildlife region.",
@@ -54,9 +80,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-zanzibar.svg",
     gallery: [
-      "/images/tours/tour-zanzibar.svg",
-      "/images/destinations/destination-zanzibar.svg",
-      "/images/tours/tour-diani.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/ZanzibarBeach.jpg/1280px-ZanzibarBeach.jpg",
+        title: "Traditional Dhow on Zanzibar Beach",
+        alt: "Traditional dhow boats on a white-sand Zanzibar beach",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:ZanzibarBeach.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Zanzibar_sultan_palace.jpg/1280px-Zanzibar_sultan_palace.jpg",
+        title: "Stone Town Waterfront",
+        alt: "Historic Stone Town waterfront and former Sultan's Palace in Zanzibar",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Zanzibar_sultan_palace.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Zanzibar_east_coast_pristine_beach.JPG/1280px-Zanzibar_east_coast_pristine_beach.JPG",
+        title: "Zanzibar's East Coast Beaches",
+        alt: "Pristine beach on the east coast of Zanzibar",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Zanzibar_east_coast_pristine_beach.JPG"
+      }
     ],
     highlights: ["Beach resort","Romantic setup","Stone Town tour"],
     summary: "A romantic island break pairing an Indian Ocean beach resort with culture, relaxation and optional private experiences for couples.",
@@ -81,9 +125,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-diani.svg",
     gallery: [
-      "/images/tours/tour-diani.svg",
-      "/images/destinations/destination-kenya.svg",
-      "/images/tours/tour-zanzibar.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Diani-Beach-Panoramic-27022010.jpg/1280px-Diani-Beach-Panoramic-27022010.jpg",
+        title: "Panoramic Diani Beach",
+        alt: "Wide panoramic view of Diani Beach on Kenya's Indian Ocean coast",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Diani-Beach-Panoramic-27022010.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Diani_Beach_02.jpg/1280px-Diani_Beach_02.jpg",
+        title: "White Sands and Indian Ocean",
+        alt: "White sandy shoreline and turquoise water at Diani Beach",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Diani_Beach_02.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Diani_Beach_04.jpg/1280px-Diani_Beach_04.jpg",
+        title: "Family Walks Along Diani Beach",
+        alt: "Visitors walking together along Diani Beach",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Diani_Beach_04.jpg"
+      }
     ],
     highlights: ["Beach hotel","Family activities","Airport transfer"],
     summary: "An easy coastal family holiday with a child-friendly beach hotel, flexible activities and convenient transfers to Diani on Kenya's south coast.",
@@ -107,9 +169,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-serengeti.svg",
     gallery: [
-      "/images/tours/tour-serengeti.svg",
-      "/images/destinations/destination-tanzania.svg",
-      "/images/hero/hero-slide-2.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Wildebeest-during-Great-Migration.JPG/1280px-Wildebeest-during-Great-Migration.JPG",
+        title: "Great Wildebeest Migration",
+        alt: "Large herds of wildebeest moving across the Serengeti plains",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Wildebeest-during-Great-Migration.JPG"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Wildebeest_crossing_river_-_Stefan_Swanepoel.jpg/1280px-Wildebeest_crossing_river_-_Stefan_Swanepoel.jpg",
+        title: "River Crossing in the Serengeti",
+        alt: "Wildebeest crossing a river during the Serengeti migration",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Wildebeest_crossing_river_-_Stefan_Swanepoel.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ngorongoro-1001-2.jpg/1280px-Ngorongoro-1001-2.jpg",
+        title: "Ngorongoro Crater View",
+        alt: "Wide view across the Ngorongoro Crater in Tanzania",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Ngorongoro-1001-2.jpg"
+      }
     ],
     highlights: ["Migration route","Crater visit","Expert guide"],
     summary: "A classic northern Tanzania safari combining the open Serengeti plains with the dramatic wildlife-rich Ngorongoro Crater.",
@@ -134,9 +214,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-dubai.svg",
     gallery: [
-      "/images/tours/tour-dubai.svg",
-      "/images/destinations/destination-dubai.svg",
-      "/images/hero/hero-slide-4.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dubai_Marina_Skyline.jpg/1280px-Dubai_Marina_Skyline.jpg",
+        title: "Dubai Marina Skyline",
+        alt: "Modern skyscrapers along the Dubai Marina waterfront",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Dubai_Marina_Skyline.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/DubaiMarinaPanorama.jpg/1280px-DubaiMarinaPanorama.jpg",
+        title: "Waterfront Views at Dubai Marina",
+        alt: "Panoramic view of yachts and towers at Dubai Marina",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:DubaiMarinaPanorama.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Dunes_in_the_Dubai_Desert_Conservation.jpg/1280px-Dunes_in_the_Dubai_Desert_Conservation.jpg",
+        title: "Desert Safari Landscapes",
+        alt: "Sand dunes in the Dubai Desert Conservation Reserve",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Dunes_in_the_Dubai_Desert_Conservation.jpg"
+      }
     ],
     highlights: ["Flights","Hotel","Desert safari"],
     summary: "A polished Dubai city escape combining modern landmarks, shopping, a desert experience and a centrally located hotel.",
@@ -160,9 +258,27 @@ export const tours: Tour[] = [
     price: "Request quote",
     image: "/images/tours/tour-naivasha.svg",
     gallery: [
-      "/images/tours/tour-naivasha.svg",
-      "/images/destinations/destination-kenya.svg",
-      "/images/hero/hero-safari.svg"
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Naivasha_lake.jpg/1280px-Naivasha_lake.jpg",
+        title: "Lake Naivasha Panorama",
+        alt: "Wide panoramic view across Lake Naivasha in Kenya",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Naivasha_lake.jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Quiet_dusk_over_Lake_Naivasha_%285232083375%29.jpg/1280px-Quiet_dusk_over_Lake_Naivasha_%285232083375%29.jpg",
+        title: "Dusk Over Lake Naivasha",
+        alt: "Blue evening sky reflected over Lake Naivasha",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Quiet_dusk_over_Lake_Naivasha_(5232083375).jpg"
+      },
+      {
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Hell%27s_Gate%2C_Kenya.jpg/1280px-Hell%27s_Gate%2C_Kenya.jpg",
+        title: "Hell's Gate Landscapes",
+        alt: "Rocky escarpment and vegetation in Hell's Gate National Park near Naivasha",
+        source: "Wikimedia Commons",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Hell%27s_Gate,_Kenya.jpg"
+      }
     ],
     highlights: ["Boat ride","Resort stay","Road transfer"],
     summary: "A quick Rift Valley escape with lakeside relaxation, an optional boat ride and a choice of nature activities around Naivasha.",
