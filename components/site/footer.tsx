@@ -35,7 +35,7 @@ export function Footer(){
       <div>
         <h3 className="font-black">Contact</h3>
         <div className="mt-4 grid gap-3 text-sm text-white/70">
-          <a href="tel:+254710557164" className="flex items-start gap-2 transition hover:text-luxury-ocean"><Phone size={18} className="mt-0.5 shrink-0"/> +254 710 557164</a>
+          <a href="tel:+2541141952775" className="flex items-start gap-2 transition hover:text-luxury-ocean"><Phone size={18} className="mt-0.5 shrink-0"/> +254 114 195 2775</a>
           <a href="mailto:info@feronetours.com" className="flex items-start gap-2 transition hover:text-luxury-ocean"><Mail size={18} className="mt-0.5 shrink-0"/> info@feronetours.com</a>
           <p className="flex items-start gap-2"><MapPin size={18} className="mt-0.5 shrink-0"/> Nairobi, Kenya</p>
         </div>
