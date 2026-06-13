@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, Clock, MapPin, MessageCircle, ShieldCheck, Sparkles, X } from "lucide-react";
 import { tours } from "@/lib/data";
 import { TourCard } from "@/components/shared/tour-card";
+import { TourDetailGallery } from "@/components/tour-detail-gallery";
 
 type TourPageProps = {
   params: Promise<{ slug: string }>;
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: TourPageProps): Promise<Metad
     openGraph: {
       title: tour.title,
       description: tour.summary,
-      images: [{ url: tour.image }]
+      images: [{ url: tour.gallery[0].src }]
     }
   };
 }
@@ -46,13 +47,14 @@ export default async function TourPackagePage({ params }: TourPageProps){
   );
   const whatsappUrl = `https://wa.me/254710557164?text=${whatsappMessage}`;
   const relatedTours = tours.filter((item)=>item.slug !== tour.slug).slice(0,3);
+  const heroImage = tour.gallery[0];
 
   return (
     <>
       <section className="relative mt-16 min-h-[520px] overflow-hidden bg-luxury-navy text-white md:mt-[116px] md:min-h-[590px]">
         <Image
-          src={tour.gallery[0]}
-          alt={tour.title}
+          src={heroImage.src}
+          alt={heroImage.alt}
           fill
           priority
           sizes="100vw"
@@ -77,17 +79,7 @@ export default async function TourPackagePage({ params }: TourPageProps){
         </div>
       </section>
 
-      <section className="container py-10 md:py-14">
-        <div className="grid gap-4 lg:grid-cols-3">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-3xl lg:col-span-2 lg:row-span-2 lg:aspect-auto lg:min-h-[560px]">
-            <Image src={tour.gallery[0]} alt={`${tour.title} main view`} fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover" />
-          </div>
-          {tour.gallery.slice(1,3).map((image,index)=><div key={image} className="relative aspect-[16/10] overflow-hidden rounded-3xl lg:min-h-[272px]">
-            <Image src={image} alt={`${tour.title} gallery image ${index + 2}`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition duration-700 hover:scale-105" />
-          </div>)}
-        </div>
-        <p className="mt-3 text-xs leading-5 text-slate-500">Gallery images represent the destination and experiences that may form part of the package. Exact hotels, rooms, vehicles and activity operators are confirmed in the final quotation.</p>
-      </section>
+      <TourDetailGallery images={tour.gallery} />
 
       <section className="container pb-12 md:pb-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
