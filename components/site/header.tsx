@@ -13,8 +13,8 @@ const nav = [
   ["Contact", "/contact"]
 ];
 
-const phoneDisplay = "+254 710 557164";
-const phoneLink = "+254710557164";
+const phoneDisplay = "+254 114 195 2775";
+const phoneLink = "+2541141952775";
 
 export function Header(){
   return (
