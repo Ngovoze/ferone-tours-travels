@@ -13,8 +13,17 @@ type Tour = {
   highlights: string[];
 };
 
+function getImageCropClass(image: string){
+  if(image.includes("tour-dubai")) return "scale-[2.65] group-hover:scale-[2.72]";
+  if(image.includes("tour-zanzibar")) return "scale-[2.4] group-hover:scale-[2.47]";
+  if(image.includes("tour-diani")) return "scale-[2.25] group-hover:scale-[2.32]";
+  if(image.includes("tour-serengeti")) return "scale-[2.25] group-hover:scale-[2.32]";
+  return "scale-100 group-hover:scale-105";
+}
+
 export function TourCard({ tour }: { tour: Tour }){
   const [isOpen, setIsOpen] = useState(false);
+  const imageCropClass = getImageCropClass(tour.image);
 
   function sendWhatsAppInquiry(event: FormEvent<HTMLFormElement>){
     event.preventDefault();
@@ -44,9 +53,15 @@ export function TourCard({ tour }: { tour: Tour }){
   return (
     <>
       <article className="group overflow-hidden rounded-3xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-luxury md:rounded-[1.75rem]">
-        <div className="relative h-56 overflow-hidden md:h-64">
-          <Image src={tour.image} alt={tour.title} fill className="object-cover transition duration-700 group-hover:scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 to-transparent" />
+        <div className="relative aspect-[3/2] overflow-hidden bg-luxury-navy">
+          <Image
+            src={tour.image}
+            alt={tour.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition duration-700 ease-out ${imageCropClass}`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-luxury-navy/70 via-transparent to-transparent" />
           <p className="absolute bottom-4 left-4 rounded-full bg-white/90 px-4 py-2 text-xs font-bold text-luxury-navy md:text-sm">{tour.price}</p>
         </div>
 
