@@ -1,5 +1,5 @@
 import { ArrowRight, CalendarDays, Globe2, MapPin, Plane, Search, ShieldCheck, Star, Users } from "lucide-react";
-import { tours, destinations, services, posts, testimonials } from "@/lib/data";
+import { tours, destinations, services, posts } from "@/lib/data";
 import { TourCard } from "@/components/shared/tour-card";
 import { DestinationCard } from "@/components/shared/destination-card";
 import { SectionHeading } from "@/components/shared/section-heading";
@@ -159,8 +159,16 @@ export default function HomePage() {
       </section>
 
       <section className="container py-10 md:py-14">
-        <SectionHeading eyebrow="Traveler reviews" title="Built for trust, comfort and clarity" text="Animated review-ready section for client testimonials and social proof." />
-        <div className="mt-6 grid gap-5 md:mt-7 md:grid-cols-3">{testimonials.map((t)=><article key={t.name} className="rounded-3xl border bg-white p-5 shadow-sm"><div className="mb-3 flex text-luxury-gold"><Star/><Star/><Star/><Star/><Star/></div><p className="text-sm leading-7 text-slate-600 md:text-base">“{t.quote}”</p><h3 className="mt-4 font-bold">{t.name}</h3><p className="text-sm text-luxury-ocean">{t.trip}</p></article>)}</div>
+        <SectionHeading eyebrow="Verified reviews" title="Real feedback, published responsibly" text="Ferone only publishes feedback that can be connected to a genuine client or travel group and shared with permission." />
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <article className="rounded-3xl border bg-white p-5 shadow-sm"><ShieldCheck className="text-luxury-ocean"/><h3 className="mt-3 text-xl font-black">Verified clients</h3><p className="mt-2 text-sm leading-7 text-slate-600">Reviews should match a real Ferone booking, traveler or group representative.</p></article>
+          <article className="rounded-3xl border bg-white p-5 shadow-sm"><Users className="text-luxury-ocean"/><h3 className="mt-3 text-xl font-black">Permission first</h3><p className="mt-2 text-sm leading-7 text-slate-600">Names, trip photographs and organization details are published only with consent.</p></article>
+          <article className="rounded-3xl border bg-white p-5 shadow-sm"><Star className="text-luxury-ocean"/><h3 className="mt-3 text-xl font-black">No fabricated ratings</h3><p className="mt-2 text-sm leading-7 text-slate-600">External review links will be added only after Ferone confirms its official profiles.</p></article>
+        </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="/reviews" className="inline-flex items-center gap-2 rounded-full bg-luxury-navy px-6 py-3 font-black text-white">How reviews are verified <ArrowRight size={17}/></a>
+          <a href="https://wa.me/254710557164?text=Hello%20Ferone%20Tours%20%26%20Travels%2C%20I%20would%20like%20to%20share%20a%20review%20of%20my%20trip." className="inline-flex items-center rounded-full bg-[#25D366] px-6 py-3 font-black text-white">Share a travel review</a>
+        </div>
       </section>
 
       <section className="bg-luxury-sand py-10 md:py-14">
