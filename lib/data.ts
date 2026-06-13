@@ -11,7 +11,7 @@ export const tours = [
   { title: 'Naivasha Weekend Gateway', destination: 'Kenya', duration: '2 Days / 1 Night', price: 'Request quote', image: '/images/tours/tour-naivasha.svg', highlights: ['Boat ride','Resort stay','Road transfer'] }
 ];
 
-export const destinations = ['Kenya','Tanzania','Uganda','Rwanda','Zanzibar','Dubai','South Africa','Europe','USA'].map((name)=>({
+export const destinations = ['Kenya','Tanzania','Uganda','Rwanda','Zanzibar','Dubai','China','South Africa','Europe','USA'].map((name)=>({
   name,
   image: `/images/destinations/destination-${name.toLowerCase().replaceAll(' ','-')}.svg`,
   description: `Premium ${name} travel planning, packages, bookings and consultation.`
