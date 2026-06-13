@@ -1,10 +1,26 @@
 import Image from "next/image";
 
 const heroSlides = [
-  { src: "/images/tours/tour-maasai-mara.svg", alt: "Maasai Mara safari in Kenya", position: "center 55%" },
-  { src: "/images/tours/tour-zanzibar.svg", alt: "Zanzibar beach holiday", position: "center 52%" },
-  { src: "/images/tours/tour-diani.svg", alt: "Diani beach family holiday", position: "center 50%" },
-  { src: "/images/tours/tour-dubai.svg", alt: "Dubai city holiday", position: "center 48%" }
+  {
+    src: "/images/tours/tour-maasai-mara.svg",
+    alt: "Maasai Mara safari in Kenya",
+    position: "center 52%"
+  },
+  {
+    src: "/images/destinations/destination-tanzania.svg",
+    alt: "Mount Kilimanjaro and Tanzania safari landscape",
+    position: "center 48%"
+  },
+  {
+    src: "/images/destinations/destination-zanzibar.svg",
+    alt: "Zanzibar beach holiday",
+    position: "center 50%"
+  },
+  {
+    src: "/images/destinations/destination-dubai.svg",
+    alt: "Dubai international holiday",
+    position: "center 48%"
+  }
 ];
 
 export function HeroSlideshow(){
