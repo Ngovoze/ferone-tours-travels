@@ -18,3 +18,64 @@ body { margin: 0; background: var(--background); color: var(--foreground); }
   31% { opacity: 0; transform: scale(1.04); }
   100% { opacity: 0; transform: scale(1.04); }
 }
+
+/* Compact homepage rhythm: prevent neighbouring sections from stacking large padding. */
+main:has(.hero-slide) > section:nth-of-type(2) {
+  padding-bottom: 0 !important;
+}
+
+main:has(.hero-slide) > section:nth-of-type(3) {
+  padding-top: 1rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+main:has(.hero-slide) > section:nth-of-type(4),
+main:has(.hero-slide) > section:nth-of-type(5) {
+  padding-bottom: 1.5rem !important;
+}
+
+main:has(.hero-slide) > section:nth-of-type(6) {
+  padding-bottom: 0 !important;
+}
+
+main:has(.hero-slide) > section:nth-of-type(7) {
+  padding-top: 1rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+main:has(.hero-slide) > section:nth-of-type(8),
+main:has(.hero-slide) > section:nth-of-type(9),
+main:has(.hero-slide) > section:nth-of-type(10),
+main:has(.hero-slide) > section:nth-of-type(11),
+main:has(.hero-slide) > section:nth-of-type(12),
+main:has(.hero-slide) > section:nth-of-type(13),
+main:has(.hero-slide) > section:nth-of-type(14) {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+main:has(.hero-slide) section [class*="mt-6"],
+main:has(.hero-slide) section [class*="md:mt-7"] {
+  margin-top: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  main:has(.hero-slide) > section:nth-of-type(3) {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  main:has(.hero-slide) > section:nth-of-type(4),
+  main:has(.hero-slide) > section:nth-of-type(5),
+  main:has(.hero-slide) > section:nth-of-type(7),
+  main:has(.hero-slide) > section:nth-of-type(8),
+  main:has(.hero-slide) > section:nth-of-type(9),
+  main:has(.hero-slide) > section:nth-of-type(10),
+  main:has(.hero-slide) > section:nth-of-type(11),
+  main:has(.hero-slide) > section:nth-of-type(12),
+  main:has(.hero-slide) > section:nth-of-type(13),
+  main:has(.hero-slide) > section:nth-of-type(14) {
+    padding-top: 1.75rem !important;
+    padding-bottom: 1.75rem !important;
+  }
+}
